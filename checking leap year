@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int sum=0;
+int leap(int year){
+    while(year>0){
+       int lastdigit=year%10;
+       sum+=lastdigit;
+       year=year/10;
+       return sum;
+    }
+}
+int main() {
+    int year;
+    cin>>year;
+    int ans=leap(year);
+    if(sum%4==0){
+        cout<<"its leap year";
+    }
+    else {
+        cout<<"not a leap year";
+    }
+    return 0;
+}
