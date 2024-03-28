@@ -1,0 +1,41 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int Armstrong(int n){
+    int originaln = n, N, lastdigi, sum = 0;
+    int j = 0;
+    
+    do {
+        N = n / 10;
+        j++;
+        n = N;
+        cout<<n;
+    } while(N > 0);
+    
+    n = originaln;
+
+    while(n > 0){
+        lastdigi = n % 10;
+        sum += pow(lastdigi, j);
+        n = n / 10;
+    }
+    
+    return sum;
+}
+
+int main(){
+    int n;
+    cin >> n;
+    
+    int answer = Armstrong(n);
+    
+    if(answer == n){
+        cout << "it is an armstrong number";
+    }
+    else{
+        cout << "it is not an armstrong number";
+    } 
+    
+    return 0;    
+}
