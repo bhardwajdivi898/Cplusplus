@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+// Function to reverse the array
+void reverse(int arr[], int n) {
+    for (int i = 0; i < n/2; i++) {
+        swap(arr[i], arr[n-i-1]);
+    }
+    // Print the reversed array
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+
+int main() {
+    // Ask for the size of the array
+    cout << "Enter the size of the array: ";
+    int n;
+    cin >> n;
+
+    // Allocate memory for the array
+    int arr[100];
+
+    // Read elements of the array
+    cout << "Enter the elements of the array: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    // Call the reverse function
+    reverse(arr, n);
+
+    return 0;
+}
